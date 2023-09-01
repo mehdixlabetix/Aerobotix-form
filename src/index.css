@@ -37,3 +37,15 @@ code {
 span{
   color: #a01d30;
 }
+@media only screen and (max-width: 768px){
+  *{
+    max-width:100%
+  }
+}
+#cardapp{
+  width: 350px;
+
+}
+#f{
+  width: 300px;
+}
