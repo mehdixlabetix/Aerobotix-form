@@ -10,15 +10,7 @@ function App() {
       <AlertProvider>
         <center id="centerapp">
           <div id="spacing"></div>
-          <Card
-            borderRadius="md"
-            id="cardapp"
-            width="40%"
-            alignItems="center"
-            className="App"
-          >
             <Form />
-          </Card>
         </center>
       </AlertProvider>
     </ChakraProvider>

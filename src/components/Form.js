@@ -2,9 +2,7 @@ import React, {useEffect} from 'react';
 import { useForm } from "react-hook-form";
 import useSubmit from "../hooks/useSubmit";
 import {useAlertContext} from "../context/alertContext";
-import {db} from "./Firebase";
-import {doc, setDoc} from "firebase/firestore";
-import {Link, useNavigate} from "react-router-dom";
+
 import {motion} from "framer-motion";
 import {
     Alert,
@@ -12,6 +10,7 @@ import {
     AlertIcon,
     AlertTitle, Box,
     Button,
+    Card,
     FormControl,
     FormLabel, HStack,
     Input,
@@ -20,7 +19,6 @@ import {
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 const Form=()=>{
-  const navigate = useNavigate();
   const { reset,register, handleSubmit,watch, formState: { errors }, } = useForm();
   const onSubmit= (data) => {
     submit( data)
@@ -45,11 +43,17 @@ const Form=()=>{
 
 
   return(
+      <Card
+          borderRadius="md"
+          id="cardapp"
+          alignItems="center"
+
+      >
       <motion.div
           className="form-group">
           <center>
               <form onSubmit={handleSubmit(onSubmit)} className="form" id="f">
-                  <VStack spacing={8}>
+                  <VStack spacing={7}>
                       <FormControl variant="floating">
 
                           <Input whileFocus={{scale: 1.2}} placeholder="FirstName"
@@ -154,7 +158,7 @@ const Form=()=>{
                       Thanks for submitting. We look forward to have you joining us.
                   </AlertDescription>
               </Alert>))}</center>
-      </motion.div>
+      </motion.div></Card>
   );
 }
 export default Form;

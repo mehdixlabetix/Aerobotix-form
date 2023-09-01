@@ -17,9 +17,10 @@ code {
 }
 
 #cardapp {
-  padding-top: 10px;
+  padding-top: 34px;
   padding-bottom: 20px;
   background-color: var(--color);
+  width: 680px;
   border-radius: 20px;
 }
 #centerapp {
@@ -29,7 +30,7 @@ code {
 }
 .form-group {
   padding-top: 10px;
-  width: 60vh;
+  width: 70vh;
 }
 #label {
   background-color: var(--color);
@@ -41,11 +42,11 @@ span{
   *{
     max-width:100%
   }
-}
+
 #cardapp{
   width: 350px;
 
 }
 #f{
   width: 300px;
-}
+}}
