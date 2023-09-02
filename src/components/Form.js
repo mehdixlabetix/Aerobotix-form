@@ -30,19 +30,14 @@ const Form=()=>{
       onOpen(response.type, response.message);
       console.log(response)
       if (response.type === 'success') {
-
         reset()
-
       }
-
-
     }
-
-
   }, [response])
 
 
   return(
+      <div>
       <Card
           borderRadius="md"
           id="cardapp"
@@ -56,12 +51,12 @@ const Form=()=>{
                   <VStack spacing={7}>
                       <FormControl variant="floating">
 
-                          <Input whileFocus={{scale: 1.2}} placeholder="FirstName"
+                          <Input whileFocus={{scale: 1.2}} placeholder=""
                                  className="firstInput"  {...register("prenom")} />
                           <FormLabel id="label">First Name :</FormLabel>
                       </FormControl>
                       <FormControl variant="floating">
-                          <Input whileFocus={{scale: 1.2}} placeholder="Last Name"
+                          <Input whileFocus={{scale: 1.2}} placeholder=""
                                  className="input" {...register("nom", {
                               required: "Please enter your last name",
                           })} />
@@ -71,7 +66,7 @@ const Form=()=>{
 
                       <FormControl variant="floating">
 
-                          <Input placeholder="Email" className="input" {...register("email", {
+                          <Input placeholder="" className="input" {...register("email", {
                               required: "Please enter your email",
                               pattern: {
                                   value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
@@ -82,7 +77,7 @@ const Form=()=>{
                           {errors.email && <span>{errors.email.message}</span>}</FormControl>
                       <FormControl variant="floating">
 
-                          <Input whileFocus={{scale: 1.2}} placeholder="Phone number"
+                          <Input whileFocus={{scale: 1.2}} placeholder=""
                                  className="input" {...register("phone", {
                               required: "Please enter your phone number",
                               pattern: {
@@ -130,6 +125,11 @@ const Form=()=>{
                               </Select>
                           </Box>
                       </HStack>
+                      <FormControl variant="floating">
+
+                          <Input whileFocus={{scale: 1.2}} placeholder=""   {...register("expectations")} />
+                          <FormLabel id="label">Expectations :</FormLabel>
+                          </FormControl>
                       <Button
                           isLoading={isLoading}
                           marginTop="10px"
@@ -139,26 +139,27 @@ const Form=()=>{
                       >Submit</Button>
                   </VStack>
               </form>
-              {response && (response.type == 'success' && (<Alert
-                  marginTop="10px"
-                  status='success'
-                  variant='subtle'
-                  flexDirection='column'
-                  alignItems='center'
-                  justifyContent='center'
-                  textAlign='center'
-                  borderRadius="20px"
-                  height='200px'
-              >
-                  <AlertIcon boxSize='40px' mr={0}/>
-                  <AlertTitle mt={4} mb={1} fontSize='lg'>
-                      Application submitted!
-                  </AlertTitle>
-                  <AlertDescription maxWidth='sm'>
-                      Thanks for submitting. We look forward to have you joining us.
-                  </AlertDescription>
-              </Alert>))}</center>
+            </center>
       </motion.div></Card>
+    {response && (response.type == 'success' && (<Alert
+        marginTop="10px"
+        status='success'
+        variant='subtle'
+        flexDirection='column'
+        alignItems='center'
+        justifyContent='center'
+        textAlign='center'
+        borderRadius="20px"
+        height='200px'
+    >
+        <AlertIcon boxSize='40px' mr={0}/>
+        <AlertTitle mt={4} mb={1} fontSize='lg'>
+            Application submitted!
+        </AlertTitle>
+        <AlertDescription maxWidth='sm'>
+            Thanks for submitting. We look forward to have you joining us.
+        </AlertDescription>
+    </Alert>))}</div>
   );
 }
 export default Form;

@@ -5,35 +5,43 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --color: gray;
+  --color: rgba(128,128,128,0.5);
+
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 #spacing {
-  padding-top: 70px;
+  padding-top: 40px;
+}
+#spacing-bottom {
+  padding-top: 60px;
 }
 
 #cardapp {
   padding-top: 34px;
   padding-bottom: 20px;
-  background-color: var(--color);
-  width: 680px;
+  background-color:var(--color) ;
+  width: 550px;
   border-radius: 20px;
 }
-#centerapp {
-  background-color: cadetblue;
+#centerapp {/*
+  background-color: cadetblue;*/
+  background-image: url("../public/images/Empty.png");
+  background-size: cover;
   width: 100%;
-  height: 120vh;
+
 }
 .form-group {
   padding-top: 10px;
-  width: 70vh;
+  width: 60vh;
 }
 #label {
-  background-color: var(--color);
+  background-color:rgba(128,128,128,0) ;
 }
 span{
   color: #a01d30;
@@ -44,9 +52,19 @@ span{
   }
 
 #cardapp{
-  width: 350px;
+  width: 300px;
 
 }
 #f{
-  width: 300px;
-}}
+  width: 250px;
+}
+#spacing-bottom{
+    padding-top: 100px;
+}
+  #centerapp{
+  background-image: url("../public/images/EmptyPhone.png");
+  background-size: cover;
+    background-position: center;
+
+}
+}

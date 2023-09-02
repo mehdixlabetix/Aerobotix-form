@@ -11,6 +11,7 @@ function App() {
         <center id="centerapp">
           <div id="spacing"></div>
             <Form />
+            <div id="spacing-bottom"></div>
         </center>
       </AlertProvider>
     </ChakraProvider>
