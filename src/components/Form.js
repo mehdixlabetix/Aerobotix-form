@@ -134,7 +134,7 @@ const Form=()=>{
                           isLoading={isLoading}
                           marginTop="10px"
                           type="submit"
-                          colorScheme="purple"
+                          colorScheme="red"
                           width="200px"
                       >Submit</Button>
                   </VStack>
