@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { useForm } from "react-hook-form";
 import useSubmit from "../hooks/useSubmit";
 import {useAlertContext} from "../context/alertContext";
@@ -17,19 +17,20 @@ import {
     Select, VStack
 } from "@chakra-ui/react";
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
-
 const Form=()=>{
   const { reset,register, handleSubmit,watch, formState: { errors }, } = useForm();
   const onSubmit= (data) => {
+
     submit( data)
   }
   const { isLoading, response, submit } = useSubmit()
   const { onOpen } = useAlertContext()
+
   useEffect(() => {
     if (response) {
       onOpen(response.type, response.message);
-      console.log(response)
       if (response.type === 'success') {
+
         reset()
       }
     }
