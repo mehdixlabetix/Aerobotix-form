@@ -112,7 +112,7 @@ const Form=()=>{
                               </Select>
                           </Box>
                           <Box>
-                              <FormLabel className="FormLabel"> Field of Study :</FormLabel>
+                              <FormLabel id="label"> Field of Study :</FormLabel>
                               <Select whileFocus={{scale: 1.2}} defaultValue="MPI"
                                       className="input" {...register("filiere")}>
                                   <option value="GL">GL</option>
@@ -126,13 +126,16 @@ const Form=()=>{
                               </Select>
                           </Box>
                       </HStack>
-                      <FormControl variant="floating">
-
-                          <Input whileFocus={{scale: 1.2}} placeholder=""   {...register("expectations")} />
-                          <FormLabel id="label">Expectations :</FormLabel>
+                      <FormControl >
+                      <FormLabel id="label"> Formation :</FormLabel>
+                      <Select whileFocus={{scale: 1.2}} defaultValue="arduino"
+                              className="input" {...register("formation")}>
+                          <option value="arduino">Piano digital</option>
+                          <option value="voltmetre">Voltmètre</option>
+                      </Select>
                           </FormControl>
                       <Button
-                          isDisabled={true}
+
                           isLoading={isLoading}
                           marginTop="10px"
                           type="submit"

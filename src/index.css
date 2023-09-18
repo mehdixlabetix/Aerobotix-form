@@ -40,8 +40,10 @@ code {
   padding-top: 10px;
   width: 60vh;
 }
+
 #label {
   background-color:rgba(105,105,105,0) ;
+  font-size: 17px;
 }
 span{
   color: #a01d30;
