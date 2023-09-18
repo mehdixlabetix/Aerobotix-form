@@ -9,10 +9,13 @@ const useSubmit = () => {
     setLoading(true);
     try {
       data.time = new Date().toString();
-      if(data.formation==="arduino"){
-      await setDoc(doc(db, "formation_arduino", data.time), data);}
+      const {formation,...newdata}=data;
+      console.log(newdata);
+      console.log(formation)
+      if(formation==="arduino"){
+      await setDoc(doc(db, "formation_arduino", newdata.time), newdata);}
       else {
-        await setDoc(doc(db, "formation_voltmetre", data.time), data);
+        await setDoc(doc(db, "formation_voltmetre", newdata.time), newdata);
       }
       setResponse({
         type: "success",
