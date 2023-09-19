@@ -130,13 +130,13 @@ const Form=()=>{
                       <FormLabel id="label"> Formation :</FormLabel>
                       <Select whileFocus={{scale: 1.2}} defaultValue="voltmetre"
                               className="input" {...register("formation")}>
-                          <option disabled value="arduino">Piano digital</option>
+                          <option  value="arduino">Piano digital</option>
                           <option value="voltmetre">Voltmètre</option>
                       </Select>
                           </FormControl>
-                      <span style={{color:"red"}}>Nous sommes désolés de vous informer que les places pour la formation du piano sont pleines. Il n'y a plus de places disponibles. Vous pouvez toujours remplir la formation du voltmetre </span>
+                      <span style={{color:"red"}}>Nous sommes désolés de vous informer que les places pour les formations sont pleines. Il n'y a plus de places disponibles. Vous pouvez toujours nous rejoindre la prochaine fois </span>
                       <Button
-
+                          disabled
                           isLoading={isLoading}
                           marginTop="10px"
                           type="submit"
