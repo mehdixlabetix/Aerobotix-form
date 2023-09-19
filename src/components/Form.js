@@ -136,7 +136,7 @@ const Form=()=>{
                           </FormControl>
                       <span style={{color:"red"}}>Nous sommes désolés de vous informer que les places pour les formations sont pleines. Il n'y a plus de places disponibles. Vous pouvez toujours nous rejoindre la prochaine fois </span>
                       <Button
-                          disabled
+                          isDisabled={true}
                           isLoading={isLoading}
                           marginTop="10px"
                           type="submit"
