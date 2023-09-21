@@ -127,7 +127,7 @@ const Form=()=>{
                           </Box>
                       </HStack>
                       <FormControl >
-                      <FormLabel id="label"> Formation :</FormLabel>
+                      <FormLabel id="label"> Challenge :</FormLabel>
                       <Select whileFocus={{scale: 1.2}}
                               className="input" {...register("type", {required: "Please enter your choice"})}>
                           <option  value="téléguidé">Téléguidé</option>
