@@ -149,8 +149,9 @@ const Form=()=>{
                                  className="input" {...register("team")} />
                           <FormLabel id="label">If you have a team, name team members :</FormLabel>
                       </FormControl>
-                      <span style={{color:"red"}}>PS: every name mentioned in the previous response must have already filled the form</span>
+                      <span style={{color:"red"}}>the form has closed. There are no more places. Stay tuned for more fun !! :)</span>
                       <Button
+                          isDisabled={true}
                           isLoading={isLoading}
                           marginTop="10px"
                           type="submit"
