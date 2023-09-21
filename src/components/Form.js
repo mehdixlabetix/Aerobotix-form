@@ -149,6 +149,7 @@ const Form=()=>{
                                  className="input" {...register("team")} />
                           <FormLabel id="label">If you have a team, name team members :</FormLabel>
                       </FormControl>
+                      <span style={{color:"red"}}>PS: every name mentioned in the previous response must have already filled the form</span>
                       <Button
                           isLoading={isLoading}
                           marginTop="10px"
