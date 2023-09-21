@@ -10,11 +10,11 @@ import {
     AlertIcon,
     AlertTitle, Box,
     Button,
-    Card,
+    Card, Center,
     FormControl,
     FormLabel, HStack,
-    Input,
-    Select, VStack
+    Input, Radio, RadioGroup,
+    Select, Stack, VStack
 } from "@chakra-ui/react";
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 const Form=()=>{
@@ -128,15 +128,28 @@ const Form=()=>{
                       </HStack>
                       <FormControl >
                       <FormLabel id="label"> Formation :</FormLabel>
-                      <Select whileFocus={{scale: 1.2}} defaultValue="voltmetre"
-                              className="input" {...register("formation")}>
-                          <option  value="arduino">Piano digital</option>
-                          <option value="voltmetre">Voltmètre</option>
+                      <Select whileFocus={{scale: 1.2}}
+                              className="input" {...register("type", {required: "Please enter your choice"})}>
+                          <option  value="téléguidé">Téléguidé</option>
+                          <option value="suiveur">Suiveur de ligne</option>
                       </Select>
+                          {errors.type && <span>{errors.type.message}</span>}
                           </FormControl>
-                      <span style={{color:"red"}}>Nous sommes désolés de vous informer que les places pour les formations sont pleines. Il n'y a plus de places disponibles. Vous pouvez toujours nous rejoindre la prochaine fois </span>
+                      <FormControl>
+                      <FormLabel id="label">Do you have a team ? </FormLabel>
+                     <RadioGroup defaultValue='no' >
+                          <Center><Stack spacing={4} direction='row'>
+                              <Radio value='yes' colorScheme="red" {...register("solo")}><text style={{color:"black"}}>Yes</text></Radio>
+                              <Radio value='no' colorScheme="red"{...register("solo")}><text style={{color:"black"}}>No</text></Radio>
+                          </Stack></Center>
+                      </RadioGroup>
+                      </FormControl>
+                      <FormControl variant="floating">
+                          <Input whileFocus={{scale: 1.2}} placeholder=""
+                                 className="input" {...register("team")} />
+                          <FormLabel id="label">If you have a team, name team members :</FormLabel>
+                      </FormControl>
                       <Button
-                          isDisabled={true}
                           isLoading={isLoading}
                           marginTop="10px"
                           type="submit"
@@ -157,6 +170,7 @@ const Form=()=>{
         textAlign='center'
         borderRadius="20px"
         height='200px'
+        width='550px'
     >
         <AlertIcon boxSize='40px' mr={0}/>
         <AlertTitle mt={4} mb={1} fontSize='lg'>
