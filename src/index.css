@@ -44,6 +44,7 @@ code {
 #label {
   background-color:rgba(105,105,105,0) ;
   font-size: 17px;
+  color: rgba(255,255,255,0.7);
 }
 span{
   color: #a01d30;
