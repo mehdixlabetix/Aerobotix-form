@@ -170,9 +170,7 @@ const Form = () => {
                     <option style={{ color: "black" }} value="voltmetre">
                       Voltmètre
                     </option>
-                    <option disabled={true} style={{ color: "black" }} value="bras">
-                      Bras robotique (2 axes)
-                    </option>
+
                     <option style={{ color: "black" }} value="manette">
                       Manette
                     </option>
@@ -193,6 +191,7 @@ const Form = () => {
                   </FormLabel>
                 </FormControl>
                 <span style={{color:"red"}}>NB: Pour chaque projet il y aura 2 équipes de 5 personnes</span>
+
                 <Button
                   isLoading={isLoading}
                   marginTop="10px"
