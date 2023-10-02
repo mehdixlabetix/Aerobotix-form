@@ -10,9 +10,9 @@ function App() {
       <AlertProvider>
         <center id="centerapp">
           <div id="spacing"></div>
-            <Form />
+          <Form />
 
-            <div id="spacing-bottom"></div>
+          <div id="spacing-bottom"></div>
         </center>
       </AlertProvider>
     </ChakraProvider>

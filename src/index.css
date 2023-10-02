@@ -5,9 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --color: rgba(128,128,128,0.5);
-
-
+  --color: rgba(128, 128, 128, 0.5);
 }
 
 code {
@@ -25,16 +23,16 @@ code {
 #cardapp {
   padding-top: 34px;
   padding-bottom: 20px;
-  background-color:var(--color) ;
+  background-color: var(--color);
   width: 550px;
   border-radius: 20px;
 }
-#centerapp {/*
+#centerapp {
+  /*
   background-color: cadetblue;*/
   background-image: url("../public/images/Empty.png");
   background-size: cover;
   width: 100%;
-
 }
 .form-group {
   padding-top: 10px;
@@ -42,32 +40,30 @@ code {
 }
 
 #label {
-  background-color:rgba(105,105,105,0) ;
+  background-color: rgba(105, 105, 105, 0);
   font-size: 17px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
-span{
+span {
   color: #a01d30;
 }
-@media only screen and (max-width: 768px){
-  *{
-    max-width:100%
+@media only screen and (max-width: 768px) {
+  * {
+    max-width: 100%;
   }
 
-#cardapp{
-  width: 300px;
-
-}
-#f{
-  width: 250px;
-}
-#spacing-bottom{
+  #cardapp {
+    width: 300px;
+  }
+  #f {
+    width: 250px;
+  }
+  #spacing-bottom {
     padding-top: 100px;
-}
-  #centerapp{
-  background-image: url("../public/images/EmptyPhone.png");
-  background-size: cover;
+  }
+  #centerapp {
+    background-image: url("../public/images/EmptyPhone.png");
+    background-size: cover;
     background-position: center;
-
-}
+  }
 }

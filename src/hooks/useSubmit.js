@@ -9,14 +9,8 @@ const useSubmit = () => {
     setLoading(true);
     try {
       data.time = new Date().toString();
-      const {projet,...newdata}=data;
-      if(projet==="arduino"){
-        await setDoc(doc(db, "projet_arduino", newdata.time), newdata);}
-      else if(projet==="voltmetre"){
-        await setDoc(doc(db, "projet_voltmetre", newdata.time), newdata);
-      }
-      else {
-        await setDoc(doc(db, "projet_autre", newdata.time), newdata);}
+
+        await setDoc(doc(db, "projet", data.time), data);
       setResponse({
         type: "success",
         message: `Thanks for your submission ${data.prenom}, we will get back to you shortly!`,
