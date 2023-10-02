@@ -170,7 +170,7 @@ const Form = () => {
                     <option style={{ color: "black" }} value="voltmetre">
                       Voltmètre
                     </option>
-                    <option style={{ color: "black" }} value="bras">
+                    <option disabled={true} style={{ color: "black" }} value="bras">
                       Bras robotique (2 axes)
                     </option>
                     <option style={{ color: "black" }} value="manette">
