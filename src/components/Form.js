@@ -170,10 +170,6 @@ const Form = () => {
                     <option style={{ color: "black" }} value="voltmetre">
                       Voltmètre
                     </option>
-
-                    <option style={{ color: "black" }} value="manette">
-                      Manette
-                    </option>
                     <option style={{ color: "black" }} value="autre">
                       Creative day (proposez votre idée de projet pour décorer le local d'Aerobotix)
                     </option>
