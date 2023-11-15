@@ -168,7 +168,7 @@ const Form = () => {
                 </span>
 
                 <Button
-                  isDisabled={fetchedData >= 31}
+                  isDisabled={fetchedData >= 35}
                   isLoading={isLoading}
                   marginTop="10px"
                   type="submit"
@@ -182,7 +182,7 @@ const Form = () => {
           </center>
         </motion.div>
       </Card>
-      {fetchedData >= 31 && (
+      {fetchedData >= 35 && (
         <Alert
           marginTop="10px"
           status="error"
