@@ -31,8 +31,9 @@ const Form = () => {
   const onSubmit = (data) => {
     submit(data);
   };
-  const { isLoading, response, submit } = useSubmit();
+  const { isLoading, FetchData, response, submit } = useSubmit();
   const { onOpen } = useAlertContext();
+  const [fetchedData, setFetchedData] = useState();
 
   useEffect(() => {
     if (response) {
@@ -42,6 +43,12 @@ const Form = () => {
       }
     }
   }, [response]);
+  useEffect(() => {
+    FetchData().then((data) => {
+      setFetchedData(data);
+      return data;
+    });
+  }, []);
 
   return (
     <div>
@@ -155,40 +162,13 @@ const Form = () => {
                     </Select>
                   </Box>
                 </HStack>
-                <FormControl>
-                  <FormLabel id="label"> Projet :</FormLabel>
-                  <Select
-                    whileFocus={{ scale: 1.2 }}
-                    defaultValue="voltmetre"
-                    style={{ fontSize: "18px" }}
-                    className="input"
-                    {...register("formation")}
-                  >
-                    <option style={{ color: "black" }} value="arduino">
-                      Piano digital
-                    </option>
-                    <option style={{ color: "black" }} value="voltmetre">
-                      Voltmètre
-                    </option>
-                    <option style={{ color: "black" }} value="autre">
-                      Creative day (proposez votre idée de projet pour décorer le local d'Aerobotix)
-                    </option>
-                  </Select>
-                </FormControl>
-                <FormControl variant="floating">
-                  <Input
-                    whileFocus={{ scale: 1.2 }}
-                    placeholder=""
-                    className="input"
-                    {...register("idee")}
-                  />
-                  <FormLabel id="label">
-                    Votre idée si vous avez choisi l'option Creative day :
-                  </FormLabel>
-                </FormControl>
-                <span style={{color:"red"}}>NB: Pour chaque projet il y aura 2 équipes de 5 personnes</span>
+                <span style={{ color: "palevioletred" }}>
+                  NB: les frais sont fixés à 15DT. La date limite du paiement
+                  est 17 novembre 2023 sinon vous serez remplacé.{" "}
+                </span>
 
                 <Button
+                  isDisabled={fetchedData >= 31}
                   isLoading={isLoading}
                   marginTop="10px"
                   type="submit"
@@ -202,6 +182,30 @@ const Form = () => {
           </center>
         </motion.div>
       </Card>
+      {fetchedData >= 31 && (
+        <Alert
+          marginTop="10px"
+          status="error"
+          variant="subtle"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          textAlign="center"
+          borderRadius="20px"
+          height="150px"
+          width="550px"
+          marginBottom="50px"
+        >
+          <AlertIcon boxSize="40px" mr={0} />
+          <AlertTitle mt={4} mb={1} fontSize="lg">
+            There is no more places &#x1F614;
+          </AlertTitle>
+          <AlertDescription maxWidth="sm">
+            Sorry that you couldn't participate but we look forward to have you
+            joining us to the birthday party.
+          </AlertDescription>
+        </Alert>
+      )}
       {response && response.type == "success" && (
         <Alert
           marginTop="10px"
