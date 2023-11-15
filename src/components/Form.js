@@ -164,7 +164,7 @@ const Form = () => {
                 </HStack>
                 <span style={{ color: "palevioletred" }}>
                   NB: les frais sont fixés à 15DT. La date limite du paiement
-                  est 17 novembre 2023 sinon vous serez remplacé.{" "}
+                  est 17 novembre 2023 sinon votre place sera donné à une personne de la liste d'attente.{" "}
                 </span>
 
                 <Button
